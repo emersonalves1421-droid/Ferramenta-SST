@@ -7,6 +7,7 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E1A2B'/%3E%3Cpath d='M16 5l9 3.5v6.8c0 5.6-3.8 9.9-9 11.7-5.2-1.8-9-6.1-9-11.7V8.5z' fill='%23F5A524'/%3E%3Cpath d='M11.5 16.2l3.2 3.2 6-6.4' stroke='%230E1A2B' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <style>
 :root{
@@ -2019,8 +2020,8 @@ function osDocHTML(o){
 }
 
 /* ---------- Supabase / autenticação / sincronização ---------- */
-const SUPABASE_URL = 'https://jndwuplqvcvebastoush.supabase.co';
-const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_zUYdR08A3jVAQ6IsvXs8ZQ_QKqeidV7';
+const SUPABASE_URL = window.SST_CONFIG.SUPABASE_URL;
+const SUPABASE_PUBLISHABLE_KEY = window.SST_CONFIG.SUPABASE_PUBLISHABLE_KEY;
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
 window.sstCloudReady = false;
 let sstAuthUser = null;
